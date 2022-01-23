@@ -16,6 +16,9 @@ function App() {
   const [data, setData] = useState([]);
   const [themeId, setThemeId] = useState([]);
   const [show, setShow] = useState(false);
+  const [detail, setDetail] = useState([]);
+
+  console.log(detail);
 
   useEffect(() => {
     const fetchLocation = async () => {
@@ -33,8 +36,9 @@ function App() {
     fetchLocation();
   }, []);
 
-  const handleModal = (e) => {
+  const handleModal = (detail) => {
     setShow(!show);
+    setDetail(detail);
   };
 
   return (
@@ -44,7 +48,7 @@ function App() {
         {/* Select Lego theme */}
         <Col md={3}>
           <Form>
-            <FormGroup formcontrol>
+            <FormGroup>
               <p className="col-sm-6 col-md-6">Select Lego theme ID :</p>
               <FormSelect
                 className="col-sm-6 col-md-2"
@@ -53,7 +57,7 @@ function App() {
               >
                 <option>Default</option>
                 {data.map((item) => (
-                  <option key={item.set_num} value={item.theme_id}>
+                  <option key={item.index} value={item.theme_id}>
                     {item.theme_id}
                   </option>
                 ))}
@@ -61,7 +65,7 @@ function App() {
             </FormGroup>
           </Form>
         </Col>
-        {/* Show theme & be able to click on the theme and go to the details. */}
+        {/* Show all lego sets using this theme. */}
         <Col md={4}>
           <p className="col-sm-12 ">LEGO sets use this theme:</p>
           <div className="col-sm-12 ">
@@ -71,36 +75,45 @@ function App() {
               .map((filtered) => (
                 <div>
                   <li key={filtered.set_num}>
-                    <a onClick={() => handleModal()}>Name: "{filtered.name}"</a>
+                    <a onClick={() => handleModal(filtered.set_num)}>
+                      <span> "{filtered.name}"</span>
+                    </a>
                   </li>
-                  <Modal show={show} onHide={(e) => setShow(e.target.show)}>
-                    <Modal.Header className="modal-title">
-                      {" "}
-                      LEGO Set Detail
-                    </Modal.Header>
-                    <Modal.Body>
-                      <p>
-                        Set number: {filtered.set_num}
-                        <br />
-                        num_parts: {filtered.num_parts}
-                        <br />
-                        year: {filtered.year}
-                      </p>
-                      <Image
-                        src={filtered.set_img_url}
-                        alt={filtered.name}
-                        width={400}
-                        height={400}
-                      />
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button onClick={() => handleModal()}>Close</Button>
-                      <Button>Like</Button>
-                    </Modal.Footer>
-                  </Modal>
                 </div>
               ))}
           </div>
+          {/* show the lego set detail when user click on it. */}
+          <Modal show={show} onHide={(e) => setShow(e.target.show)}>
+            <Modal.Header className="modal-title">
+              {" "}
+              LEGO Set Detail
+            </Modal.Header>
+            {data
+              .filter((data) => data.set_num == detail)
+              .map((detail) => (
+                <Modal.Body className="modal-body">
+                  <p>
+                    Name: {detail.name}
+                    <br />
+                    Set number: {detail.set_num}
+                    <br />
+                    Number parts: {detail.num_parts}
+                    <br />
+                    Year: {detail.year}
+                  </p>
+                  <Image
+                    src={detail.set_img_url}
+                    width={400}
+                    height={400}
+                    rounded
+                  />
+                </Modal.Body>
+              ))}
+            <Modal.Footer>
+              <Button onClick={() => handleModal()}>Close</Button>
+              <Button>Like</Button>
+            </Modal.Footer>
+          </Modal>
         </Col>
       </Row>
     </Container>

@@ -12,6 +12,10 @@ p {
   text-align: center;
 }
 
+span {
+  font-weight: 600;
+}
+
 li {
   margin-bottom: 18px;
 }
@@ -29,4 +33,7 @@ a:hover {
   color: white;
   font-size: large;
   font-weight: 600;
+}
+.modal-body {
+  text-align: center;
 }
