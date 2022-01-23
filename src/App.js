@@ -58,13 +58,14 @@ function App() {
             <FormGroup>
               <p className="col-sm-6 col-md-6">Select Lego theme ID:</p>
               <FormSelect
+                multiple={false}
                 className="col-sm-6 col-md-2"
                 value={themeId}
                 onChange={(e) => setThemeId(e.target.value)}
               >
                 <option>Default</option>
                 {data.map((item) => (
-                  <option key={item.index} value={item.theme_id}>
+                  <option key={item.set_num} value={item.theme_id}>
                     {item.theme_id}
                   </option>
                 ))}
@@ -82,10 +83,13 @@ function App() {
               .map((filtered) => (
                 <div>
                   <li key={filtered.set_num}>
-                    <a onClick={() => modalOpen(filtered.set_num)}>
+                    <a
+                      style={{ textDecoration: "none", color: "black" }}
+                      href="#"
+                      onClick={() => modalOpen(filtered.set_num)}
+                    >
                       <span> "{filtered.name}"</span>
                     </a>
-
                     <span style={{ color: "red" }}>
                       <i
                         className={
@@ -129,7 +133,7 @@ function App() {
                 <Modal.Footer>
                   <button
                     type="button"
-                    class={
+                    className={
                       detail.set_num == num.set && num.like
                         ? "btn btn-danger"
                         : "btn btn-info"
@@ -140,7 +144,7 @@ function App() {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-info"
+                    className="btn btn-info"
                     onClick={() => modalClose()}
                   >
                     Close
