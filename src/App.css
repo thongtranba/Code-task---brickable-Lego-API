@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  background-color: black;
+  background-color: rgba(37, 37, 37, 0.863);
   color: white;
   padding: 15px;
 }
@@ -17,22 +17,24 @@ span {
 }
 
 li {
-  margin-bottom: 18px;
+  margin: 18px;
 }
-
-a {
+li span {
+  margin-right: 10px;
+}
+a span {
   background-color: rgba(243, 170, 207, 0.534);
   transition: background-color 0.5s;
 }
 
-a:hover {
+a span:hover {
   background-color: rgb(211, 188, 59);
 }
 .modal-title {
-  background-color: blue;
-  color: white;
-  font-size: large;
-  font-weight: 600;
+  background-color: rgb(87, 193, 219);
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
 }
 .modal-body {
   text-align: center;
