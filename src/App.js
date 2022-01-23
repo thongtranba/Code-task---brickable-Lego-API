@@ -36,11 +36,11 @@ function App() {
     fetchAPI();
   }, []);
 
-  const handleOpen = (set) => {
+  const modalOpen = (set) => {
     setShow(!show);
     setDetail(set);
   };
-  const handleClose = () => {
+  const modalClose = () => {
     setShow(!show);
   };
   const likeSet = (set) => {
@@ -82,7 +82,7 @@ function App() {
               .map((filtered) => (
                 <div>
                   <li key={filtered.set_num}>
-                    <a onClick={() => handleOpen(filtered.set_num)}>
+                    <a onClick={() => modalOpen(filtered.set_num)}>
                       <span> "{filtered.name}"</span>
                     </a>
 
@@ -141,7 +141,7 @@ function App() {
                   <button
                     type="button"
                     class="btn btn-info"
-                    onClick={() => handleClose()}
+                    onClick={() => modalClose()}
                   >
                     Close
                   </button>
