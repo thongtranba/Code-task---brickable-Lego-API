@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# The Rebrickable-LEGO-API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is to create an application fetching data from the Rebrickable-LEGO-API that users can select and like their favourite LEGO set (sort by the LEGO theme id). After making their liked list, users can save it to the localstorage or clear the liked list.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+https://brickable-lego-api.netlify.app/
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application is built with React.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  npx create-react-app brickable-lego-api
+  cd brickable-lego-api
+```
 
-### `npm test`
+Install react-boostrap^5.1, fontawsome^4.7 and bootstrap-social^5.1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+After all the installation are finished.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Start the application (front-end):
+  - Open preferred terminal
+  - Type
+  ```
+  npm start
+  ```
+- Now the program should be running!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/82447776/150860419-154fb02c-f3cf-4d20-b7f9-276b0f0e3ab2.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- On the overview Page, Users can select a LEGO Theme and every Lego theme will show all the LEGO sets using this theme.
+  ![image](https://user-images.githubusercontent.com/82447776/150860784-cbda5892-2dce-4b4d-b691-09c020fb4729.png)
+- Users can click on a LEGO set and go to the details view.
+- in the details view, users can know the information of selected LEGO set (name, set number, number part, picture...) and click "like" the LEGO set.
+  ![image](https://user-images.githubusercontent.com/82447776/150860900-adb53c01-cbe5-45c3-b264-4744beef3c3a.png)
+- When a LEGO set is liked, it should be visualized a heart icon on the overview page.
+  ![image](https://user-images.githubusercontent.com/82447776/150861241-f9cc7263-cc38-425c-9276-0f9c76476e9e.png)
+- After "liked" some LEGO sets:
+  - users can click "save your list" button to save your liked list
+  - Or users can click "clear your list" button to clear your liked list
