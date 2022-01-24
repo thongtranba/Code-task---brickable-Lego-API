@@ -9,27 +9,9 @@ p {
   color: black;
   font-size: large;
   font-weight: 600;
-  text-align: center;
+  /* text-align: center; */
 }
 
-span {
-  font-weight: 600;
-}
-
-li {
-  margin: 18px;
-}
-li span {
-  margin-right: 10px;
-}
-a span {
-  background-color: rgba(243, 170, 207, 0.534);
-  transition: background-color 0.5s;
-}
-
-a span:hover {
-  background-color: rgb(211, 188, 59);
-}
 .modal-title {
   background-color: rgb(87, 193, 219);
   color: black;
@@ -38,4 +20,33 @@ a span:hover {
 }
 .modal-body {
   text-align: center;
+}
+
+.button-legoset {
+  margin: 7px 10px;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-legoset:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+.button-legoset:hover {
+  background: linear-gradient(180deg, #5375e4 0%, #9f33e7 100%);
 }
