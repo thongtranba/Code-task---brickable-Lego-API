@@ -107,7 +107,6 @@ function OverviewPage() {
         {/* Show all lego sets using this theme. */}
         <Col style={{ textAlign: "center" }} md={5}>
           <p>Lego sets use this theme:</p>
-
           <div className="col-sm-12 ">
             {" "}
             {legoSetList
@@ -173,15 +172,19 @@ function OverviewPage() {
             </Modal.Footer>
           </Modal>
         </Col>
-        <Col style={{ padding: "40px" }} md={2}>
+        <Col style={{ padding: "30px", textAlign: "center" }} md={2}>
           <button
-            style={{ marginBottom: "20px" }}
+            style={{ margin: "15px" }}
             className="btn btn-warning"
             onClick={() => saveLegoSetList()}
           >
             Save your list
           </button>
-          <button class="btn btn-danger" onClick={() => clearCache()}>
+          <button
+            style={{ margin: "20px" }}
+            class="btn btn-danger"
+            onClick={() => clearCache()}
+          >
             Clear your list
           </button>
         </Col>
