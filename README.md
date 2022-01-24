@@ -6,6 +6,17 @@ This project is to create an application fetching data from the Rebrickable-LEGO
 
 https://brickable-lego-api.netlify.app/
 
+## Lessons Learned
+
+1.  What did you learn while building this project?
+
+- Firstly, I know how to fetch data API by using async/await.
+- Secondly, with complex data, I learned that need a new data Class ( legoSet.js from './src/class'). Because, with a new data class, API data will be clean and I can add a "liked" value which is convenient to develop the "like" function and save to the local storage.
+
+2.  What challenges did you face?
+
+- The challenge is saving the "liked" list to the local storage and loading the list from it. With this challenge, I read a lot about how to set data to local and get them, and how to check the value is "null" before getting data. After many tries, I decided to make a "save your list" button to save the data into the local storage manually.
+
 ## Installation
 
 This application is built with React.js
@@ -41,3 +52,7 @@ After all the installation are finished.
 - After "liked" some LEGO sets:
   - users can click "save your list" button to save your liked list
   - Or users can click "clear your list" button to clear your liked list
+
+## Documentation
+
+[Rebrickable-API](https://rebrickable.com/api/v3/docs/)
